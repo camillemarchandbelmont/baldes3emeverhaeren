@@ -1,0 +1,474 @@
+/* Variables globales */
+:root {
+    --primary-color: #1B1B3A;
+    --accent-color: #D4AF37;
+    --text-color: #FFFFFF;
+    --background-light: #F5F5F5;
+    --transition: all 0.3s ease;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Header/Hero */
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(27, 27, 58, 0.9), rgba(27, 27, 58, 0.9)),
+                url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.hero {
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.event-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail i {
+    color: var(--accent-color);
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 5rem 2rem;
+    background-color: var(--background-light);
+}
+
+.timeline-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    width: 50%;
+    padding: 0 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -6px;
+}
+
+.date {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Food Section */
+.food-section {
+    padding: 5rem 2rem;
+}
+
+.food-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.food-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category {
+    background-color: var(--background-light);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.category ul {
+    list-style: none;
+}
+
+.category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.food-tips {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background-color: var(--background-light);
+    border-radius: 8px;
+}
+
+.food-tips h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.food-tips ul {
+    list-style: disc;
+    padding-left: 2rem;
+}
+
+.food-tips li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .nav-content,
+    .footer-content,
+    .food-categories {
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .food-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .event-details {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .event-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: -6px;
+    }
+
+    .food-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .food-tips {
+        margin: 2rem 1rem 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .timeline-section,
+    .food-section {
+        padding: 2rem 1rem;
+    }
+
+    .category {
+        padding: 1.5rem;
+    }
+
+    .contact-section {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .contact-email {
+        font-size: 1.2rem;
+        word-break: break-all;
+    }
+}
+
+/* Ajustements pour les appareils en mode paysage */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        height: auto;
+        min-height: 100vh;
+        padding: 6rem 1rem 3rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .nav-content {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Animations au défilement */
+.timeline-item,
+.category,
+.faq-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible,
+.category.visible,
+.faq-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style de la navigation au défilement */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(27, 27, 58, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
